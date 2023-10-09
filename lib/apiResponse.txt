@@ -1,0 +1,28 @@
+{"bodies":[{"id":"uranus","name":"Uranus","englishName":"Uranus","isPlanet":true,
+"moons":[{},{},{},{},{},{},{},{},{},{},{},{},
+{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],
+"semimajorAxis":2870658186,"perihelion":2734998229,"aphelion":3006318143,
+"inclination":0.77200,"mass":{},
+"density":1.27000,"gravity":8.87000,
+"escape":21380.00000,"meanRadius":25362.00000,
+"aroundPlanet":null,"discoveredBy":"William Herschel",
+"discoveryDate":"13/03/1781","axialTilt":97.77,"avgTemp":76}
+,{"id":"neptune","name":"Neptune","englishName":"Neptune",
+"isPlanet":true,"moons":[{},{},{},{},{},{},{},{},{},{},{},{},{},{}],
+"semimajorAxis":4498396441,"perihelion":4459753056,"aphelion":4537039826,"inclination":1.76900,
+"mass":{},"density":1.63800,"gravity":11.15000,"escape":23560.00000,
+"meanRadius":24622.00000,"aroundPlanet":null,
+"discoveredBy":"Urbain Le Verrier, John Couch Adams, Johann Galle","discoveryDate":"23/09/1846",
+"axialTilt":28.3,"avgTemp":55},{"id":"jupiter","name":"Jupiter","englishName":"Jupiter","isPlanet":true,
+"moons":[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{
+
+},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],"semimajorAxis":778340821,"perihelion":740379835,"aphelion":816620000,"inclination":1.30400,"mass":{},
+"density":1.32620,"gravity":24.79000,"escape":60200.00000,
+"meanRadius":69911.00000,"aroundPlanet":null,"discoveredBy":"",
+"discoveryDate":"","axialTilt":3.12,"avgTemp":165},
+{"id":"mars","name":"Mars","englishName":"Mars","isPlanet":true,"moons":[{},{}],
+"semimajorAxis":227939200,"perihelion":206700000,"aphelion":249200000,"inclination":1.85000,"mass":{},"density":3.93410,
+"gravity":3.71000,"escape":5030.00000,"meanRadius":3389.50000,"aroundPlanet":null,
+"discoveredBy":"","discoveryDate":"","axialTilt":25.19,"avgTemp":210},
+{"id":"mercure","name":"Mercure","englishName":"Mercury","isPlanet":true,"moons":null,"semimajorAxis":57909050,"perihelion":46001200,"aphelion":69816900,"inclination":7.00000,"mass":{},"density":5.42910,"gravity":3.70000,"escape":4250.00000,"meanRadius":2439.40000,"aroundPlanet":null,"discoveredBy":"","discoveryDate":"","axialTilt":0.0352,"avgTemp":440},{"id":"saturne","name":"Saturne","englishName":"Saturn","isPlanet":true,"moons":[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],"semimajorAxis":1426666422,"perihelion":1349823615,"aphelion":1503509229,"inclination":2.48500,"mass":{},"density":0.68710,"gravity":10.44000,"escape":36090.00000,"meanRadius":58232.00000,"aroundPlanet":null,"discoveredBy":"","discoveryDate":"","axialTilt":26.73,"avgTemp":134},{"id":"terre","name":"La Terre","englishName":"Earth","isPlanet":true,"moons":[{}],"semimajorAxis":149598023,"perihelion":147095000,"aphelion":152100000,"inclination":0.00000,"mass":{},"density":5.51360,"gravity":9.80000,"escape":11190.00000,"meanRadius":6371.00840,"aroundPlanet":null,"discoveredBy":"","discoveryDate":"","axialTilt":23.4393,"avgTemp":288},{"id":"venus","name":"Vénus","englishName":"Venus","isPlanet":true,"moons":null,"semimajorAxis":108208475,"perihelion":107477000,"aphelion":108939000,"inclination":3.39000,"mass":{},"density":5.24300,"gravity":8.87000,"escape":10360.00000,"meanRadius":6051.80000,
+"aroundPlanet":null,"discoveredBy":"","discoveryDate":"","axialTilt":177.36,"avgTemp":737}]}
