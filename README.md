@@ -1,10 +1,11 @@
 # our_space
 
-A new Flutter project.
+A Flutter project by anthonysomtochukwuude
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is an informative application of the solar system, it's stars and moons.
+created by: Anthony Somtochukwu Ude
+twitter: twitter.com/anthony_devs
 
 A few resources to get you started if this is your first Flutter project:
 
