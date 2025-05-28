@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:our_space/ExoPlanets.dart';
@@ -14,7 +13,7 @@ Future<void> fetchData() async {
   final response = await http.get(Uri.parse(apiUrl));
   if (response.statusCode == 200) {
     final jsonData = jsonDecode(response.body);
-    print(jsonData); // Do something with the data
+    print(jsonData);
   } else {
     print('Request failed with status: ${response.statusCode}.');
   }
@@ -23,159 +22,86 @@ Future<void> fetchData() async {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    String rsp;
+    final List<Map<String, dynamic>> items = [
+      {
+        'image': 'assets/images/milkyway.jpg',
+        'label': 'The Stars',
+        'widget': MilkyWay(),
+      },
+      {
+        'image': 'assets/images/moon.jpg',
+        'label': 'Moons',
+        'widget': MoonsListPage(),
+      },
+      {
+        'image': 'assets/images/exoplanets.jpg',
+        'label': 'Exoplanets',
+        'widget': ExoplanetList(),
+      },
+    ];
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 29, 29, 29),
-        body: ListView(
-      children: [
-        PlanetsListPage(),
-        CarouselSlider(
-            items: [
-              Container(
-                width: 145,
-                height: 145,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(500),
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    MilkyWay(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                              child: ListView(
-                                children: <Widget>[
-                                  
-                                  Container(
-                                    height: 145,
-                                    width: 145,
-                                    decoration:BoxDecoration(borderRadius: BorderRadius.circular(200), image:  DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/milkyway.jpg"),
-                                        fit: BoxFit.cover,
-                                      ),),
-                                      child: Text(
-                                        'The Stars',
-                                        style: TextStyle(
-                                          
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold, color: Color(0xFFFFFFFF)),
-                                      ),
-                                    
-                                  ),
-                                ],
-                              
+      body: ListView(
+        children: [
+          PlanetsListPage(),
+          SizedBox(
+            height: 180,
+            child: PageView.builder(
+              controller: PageController(viewportFraction: 0.7),
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                final item = items[index];
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => item['widget']),
+                    );
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Container(
+                          height: 145,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(200),
+                            image: DecorationImage(
+                              image: AssetImage(item['image']),
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                      ),
-              Container(
-                width: 145,
-                height: 145,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(500),
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    MoonsListPage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                              child: ListView(
-                                children: <Widget>[
-                                  
-                                  Container(
-                                    height: 145,
-                                    width: 145,
-                                    decoration:BoxDecoration(borderRadius: BorderRadius.circular(200), image:  DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/moon.jpg"),
-                                        fit: BoxFit.cover,
-                                      ),),
-                                      child: Text(
-                                        'Moons',
-                                        style: TextStyle(
-                                          
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold, color: Color(0xFFFFFFFF)),
-                                      ),
-                                    
-                                  ),
-                                ],
-                              
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.5),
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(200),
+                                bottomRight: Radius.circular(200)),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: Text(
+                            item['label'],
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
                             ),
                           ),
                         ),
-                      ),
-
-
-              Container(
-                width: 145,
-                height: 145,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(500),
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    ExoplanetList(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                              child: ListView(
-                                children: <Widget>[
-                                  
-                                  Container(
-                                    height: 145,
-                                    width: 145,
-                                    decoration:BoxDecoration(borderRadius: BorderRadius.circular(200), image:  DecorationImage(
-                                        image: AssetImage(
-                                            "assets/images/exoplanets.jpg"),
-                                        fit: BoxFit.cover,
-                                      ),),
-                                      child: Text(
-                                        'Exoplanets',
-                                        style: TextStyle(
-                                          
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold, color: Color(0xFFFFFFFF)),
-                                      ),
-                                    
-                                  ),
-                                ],
-                              
-                            ),
-                          ),
-                        ),
-                      ),
-            ],
-            options: CarouselOptions(
-              autoPlay: false,
-              enlargeCenterPage: true,
-              aspectRatio: 2.0,
-              initialPage: 1,
-              enableInfiniteScroll: true,
-              autoPlayInterval: Duration(seconds: 5),
-              viewportFraction: 0.8,
-            ))
-      ],
-    ));
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
